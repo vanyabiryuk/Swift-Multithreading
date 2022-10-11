@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17117A6E28F4503500832D79 /* Mutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17117A6D28F4503500832D79 /* Mutex.swift */; };
 		1789999828F0788000300D10 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1789999728F0788000300D10 /* main.swift */; };
+		1789999F28F0B80500300D10 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1789999E28F0B80500300D10 /* Thread.swift */; };
+		17A895A328F209E300ABDD4F /* QOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A895A228F209E300ABDD4F /* QOS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +26,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		17117A6D28F4503500832D79 /* Mutex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mutex.swift; sourceTree = "<group>"; };
 		1789999428F0788000300D10 /* Multithreading */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Multithreading; sourceTree = BUILT_PRODUCTS_DIR; };
 		1789999728F0788000300D10 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		1789999E28F0B80500300D10 /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
+		17A895A228F209E300ABDD4F /* QOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QOS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				1789999728F0788000300D10 /* main.swift */,
+				1789999E28F0B80500300D10 /* Thread.swift */,
+				17A895A228F209E300ABDD4F /* QOS.swift */,
+				17117A6D28F4503500832D79 /* Mutex.swift */,
 			);
 			path = Multithreading;
 			sourceTree = "<group>";
@@ -94,6 +103,7 @@
 				TargetAttributes = {
 					1789999328F0788000300D10 = {
 						CreatedOnToolsVersion = 14.0;
+						LastSwiftMigration = 1400;
 					};
 				};
 			};
@@ -121,6 +131,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1789999828F0788000300D10 /* main.swift in Sources */,
+				17117A6E28F4503500832D79 /* Mutex.swift in Sources */,
+				1789999F28F0B80500300D10 /* Thread.swift in Sources */,
+				17A895A328F209E300ABDD4F /* QOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,10 +256,18 @@
 		1789999C28F0788000300D10 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PR96GXP99H;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Multithreading/Multithreading-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -254,10 +275,17 @@
 		1789999D28F0788000300D10 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PR96GXP99H;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Multithreading/Multithreading-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
