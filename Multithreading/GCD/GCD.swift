@@ -22,8 +22,6 @@ struct GCD {
     
     static func main() {
         let serialQueue = DispatchQueue(label: "com.github-vanyabiryuk.serial-queue")
-        let concurrentQueue = DispatchQueue(label: "com.github-vanyabiryuk.concurrent-queue",
-                                            attributes: .concurrent)
         
         task(1)
         task(2)
